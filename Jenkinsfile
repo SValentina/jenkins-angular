@@ -7,12 +7,6 @@ pipeline {
       }
     }
 
-    stage('Install karma-chrome-launcher') {
-      steps {
-        sh 'npm i -D karma-chrome-launcher'
-      }
-    }
-
     stage('Test') {
       steps {
         sh 'npm test'
