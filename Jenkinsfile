@@ -15,13 +15,13 @@ pipeline {
     }
 
     stage('Test') {
-       environment {
+      environment {
         CHROME_BIN = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
       }
       steps {
         sh 'npm install --save-dev karma-phantomjs-launcher'
         sh 'npm install --save intl'
-        sh 'ng test'
+        sh 'ng test --browsers PhantomJS'
       }
     }
 
