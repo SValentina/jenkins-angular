@@ -17,7 +17,7 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('Test') {
       steps {
         sh 'ng test'
       }
