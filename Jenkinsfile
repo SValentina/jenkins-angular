@@ -5,13 +5,18 @@ pipeline {
       steps {
         sh 'npm install'
         sh 'npm install -g @angular/cli'
-        sh 'sudo apt install python3'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'ng build'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'npm run test'
+        sh 'ng test'
       }
     }
 
