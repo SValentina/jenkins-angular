@@ -4,16 +4,21 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm install'
-        sh 'npm install -g @angular/cli@latest'
       }
     }
 
-    stage('Test') {
+    stage('Build') {
       environment {
         CHROME_BIN = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
       }
       steps {
-        sh 'ng test --browsers ChromeHeadless'
+        sh 'npm run build:ssr'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh 'pm2 restart all'
       }
     }
 
