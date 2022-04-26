@@ -16,7 +16,7 @@ pipeline {
 
     stage('Test') {
        environment {
-        CHROME_BIN = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+        CHROME_BIN = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
       }
       steps {
         sh 'ng test'
