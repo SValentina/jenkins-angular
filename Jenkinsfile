@@ -9,7 +9,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm test'
+        sh 'ng test --browsers ChromeHeadless'
       }
     }
 
