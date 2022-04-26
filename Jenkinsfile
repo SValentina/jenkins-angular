@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh 'npm install'
         sh 'npm install -g @angular/cli'
+        sh 'sudo apt install python3'
       }
     }
 
