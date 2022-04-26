@@ -4,6 +4,7 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm install'
+        sh 'npm install -g @angular/cli'
       }
     }
 
@@ -12,13 +13,13 @@ pipeline {
         CHROME_BIN = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
       }
       steps {
-        sh 'npm run build:ssr'
+        sh 'ng build'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'pm2 restart all'
+        sh 'ng test'
       }
     }
 
