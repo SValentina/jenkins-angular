@@ -9,17 +9,17 @@ pipeline {
     }
 
     stage('Build') {
-      environment {
-        CHROME_BIN = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-      }
       steps {
         sh 'ng build'
       }
     }
 
     stage('Test') {
+       environment {
+        CHROME_BIN = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+      }
       steps {
-        bat 'npm test'
+        sh 'ng test'
       }
     }
 
