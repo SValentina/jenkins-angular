@@ -8,12 +8,6 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        sh 'ng build'
-      }
-    }
-
     stage('Test') {
       environment {
         CHROME_BIN = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
