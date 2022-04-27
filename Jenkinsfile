@@ -15,6 +15,12 @@ pipeline {
     }
 
     stage('Test') {
+      agent {
+        docker {
+          image 'lioman/ng-chrome'
+        }
+
+      }
       steps {
         sh 'ng test'
       }
