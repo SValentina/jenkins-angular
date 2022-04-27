@@ -17,9 +17,8 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'trion/ng-cli-karma'
+          image 'adityai/angular-unit-test'
         }
-
       }
       steps {
         sh 'ng test'
