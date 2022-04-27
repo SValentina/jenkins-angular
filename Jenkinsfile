@@ -17,7 +17,7 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'lioman/ng-chrome'
+          image 'trion/ng-cli-karma'
         }
 
       }
