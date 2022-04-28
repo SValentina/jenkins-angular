@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'sivesind/chrome-node-js'
+      image 'atools/chrome-headless'
     }
 
   }
