@@ -9,19 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'ng build'
-      }
-    }
-
-    stage('Test') {
-      agent {
-        docker {
-          image 'avatsaev/angular-chrome-headless'
-        }
-
-      }
-      steps {
-        sh 'ng test --watch=false --browsers=ChromeHeadless'
+        sh 'npm build'
       }
     }
 
