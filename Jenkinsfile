@@ -17,8 +17,9 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'adityai/angular-unit-test'
+          image 'avatsaev/angular-chrome-headless'
         }
+
       }
       steps {
         sh 'ng test'
