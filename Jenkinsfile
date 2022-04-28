@@ -22,7 +22,7 @@ pipeline {
 
       }
       steps {
-        sh 'ng test'
+        sh 'ng test --watch=false --browsers=ChromeHeadless'
       }
     }
 
