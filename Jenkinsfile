@@ -16,10 +16,12 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'chromedp/headless-shell'          
+          image 'chromedp/headless-shell'
         }
+
       }
       steps {
+        sh 'npm install'
         sh 'npm install -g @angular/cli'
         sh 'ng test'
       }
