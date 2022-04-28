@@ -8,7 +8,6 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'sudo chown -R 1000:1000 "/data/.npm"'
         sh 'npm install'
         sh 'npm install -g @angular/cli'
       }
