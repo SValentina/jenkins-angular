@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'chromedp/headless-shell'
+      image 'sivesind/chrome-node-js'
     }
 
   }
@@ -25,8 +25,5 @@ pipeline {
       }
     }
 
-  }
-  tools {
-    nodejs 'nodejs'
   }
 }
