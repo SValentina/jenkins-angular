@@ -1,11 +1,13 @@
 pipeline {
-  agent {
-    docker {
-      image 'avatsaev/angular-chrome-headless'
+  agent any
+  stages {
+    stage('Install') {
+      steps {
+        sh 'npm install'
+        sh 'npm install -g @angular/cli'
+      }
     }
 
-  }
-  stages {
     stage('Build') {
       steps {
         sh 'ng build'
@@ -13,6 +15,12 @@ pipeline {
     }
 
     stage('Test') {
+      agent {
+        docker {
+          image 'avatsaev/angular-chrome-headless'
+        }
+
+      }
       steps {
         sh 'ng test --watch=false --browsers=ChromeHeadless'
       }
