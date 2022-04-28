@@ -13,7 +13,7 @@ pipeline {
         sh 'ng build'
       }
     }
-
+  }
   tools {
     nodejs 'nodejs'
   }
