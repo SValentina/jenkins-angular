@@ -16,13 +16,13 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'avatsaev/angular-chrome-headless'
+          image 'yolch/ng-test-build:latest'
+          reuseNode true
         }
 
       }
       steps {
-        sh 'npm install -g @angular/cli'
-        sh 'ng test --watch=false --browsers=ChromeHeadless'
+        sh 'ng test --browsers ChromeHeadlessCustom --watch false'
       }
     }
 
