@@ -16,12 +16,12 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'juanje/angular-cli-chrome'          
+          image 'chromedp/headless-shell'          
         }
-
       }
       steps {
-        sh 'docker run -it --rm -v ${PWD}:/app juanje/angular-cli-chrome test --no-watch --no-progress'
+        sh 'npm install -g @angular/cli'
+        sh 'ng test'
       }
     }
 
