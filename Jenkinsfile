@@ -4,7 +4,6 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm install'
-        sh 'npm install -g @angular/cli'
       }
     }
 
@@ -22,6 +21,7 @@ pipeline {
 
       }
       steps {
+        sh 'npm install -g @angular/cli'
         sh 'ng test --watch=false --browsers=ChromeHeadless'
       }
     }
