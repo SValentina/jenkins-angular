@@ -13,6 +13,19 @@ pipeline {
         sh 'ng build'
       }
     }
+
+    stage('Test') {
+      agent {
+        docker {
+          image 'avatsaev/angular-chrome-headless'
+        }
+
+      }
+      steps {
+        sh 'ng test --watch=false --browsers=ChromeHeadless'
+      }
+    }
+
   }
   tools {
     nodejs 'nodejs'
