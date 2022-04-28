@@ -16,13 +16,12 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'yolch/ng-test-build:latest'
-          reuseNode true
+          image 'juanje/angular-cli-chrome'          
         }
 
       }
       steps {
-        sh 'ng test --browsers ChromeHeadlessCustom --watch false'
+        sh 'docker run -it --rm -v ${PWD}:/app juanje/angular-cli-chrome test --no-watch --no-progress'
       }
     }
 
