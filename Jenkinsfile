@@ -16,14 +16,12 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'timbru31/node-chrome:slim'
+          image 'nextools/chromium'
         }
 
       }
       steps {
-        sh 'sudo chown -R $USER /usr/local/lib/node_modules'
         sh 'npm install'
-        sh 'npm remove -g angular-cli'
         sh 'npm install -g @angular/cli@latest'
         sh 'npm install karma-coverage-istanbul-reporter --save-dev'
         sh 'npm test'
