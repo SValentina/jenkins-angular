@@ -8,9 +8,9 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        echo '$USER'
         sh 'npm install'
         sh 'npm install -g @angular/cli@latest'
+        sh 'printenv'
       }
     }
 
