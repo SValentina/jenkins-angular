@@ -9,8 +9,8 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm install'
+        sh 'chown usr:usr /usr/local/lib/node_modules'
         sh 'npm install -g @angular/cli@latest'
-        sh 'printenv'
       }
     }
 
