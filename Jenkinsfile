@@ -6,7 +6,7 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm install'
-        sh ' npm install -g karma-cli'
+        sh 'npm install karma-coverage-istanbul-reporter --save-dev'
       }
     }
 
