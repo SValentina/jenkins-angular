@@ -22,7 +22,7 @@ pipeline {
       }
       steps {
         sh 'npm install'
-        sh 'ng test'
+        sh 'npm test'
       }
     }
 
