@@ -1,15 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'atools/chrome-headless:java11-node16-latest'
-    }
-
-  }
+  agent any
   stages {
     stage('Install') {
       steps {
         sh 'npm install'
-        sh 'npm install -g @angular/cli'
       }
     }
 
@@ -20,7 +14,14 @@ pipeline {
     }
 
     stage('Test') {
+      agent {
+        docker {
+          image 'atools/chrome-headless:java11-node16-latest'
+        }
+
+      }
       steps {
+        sh 'npm install -g @angular/cli'
         sh 'ng test'
       }
     }
