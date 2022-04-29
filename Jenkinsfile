@@ -21,6 +21,7 @@ pipeline {
 
       }
       steps {
+        sh 'sudo chown -R $USER /usr/local/lib/node_modules'
         sh 'npm install'
         sh 'npm remove -g angular-cli'
         sh 'npm install -g @angular/cli@latest'
