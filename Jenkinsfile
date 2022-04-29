@@ -22,8 +22,8 @@ pipeline {
       }
       steps {
         sh 'npm install'
-        sh 'npm test'
         sh 'npm install karma-coverage-istanbul-reporter --save-dev'
+        sh 'npm test'
       }
     }
 
