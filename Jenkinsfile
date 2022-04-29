@@ -1,9 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'timbru31/node-chrome:slim'
+    }
+
+  }
   stages {
     stage('Install') {
       steps {
         sh 'npm install'
+        sh 'npm install -g @angular/cli@latest'
       }
     }
 
@@ -14,23 +20,11 @@ pipeline {
     }
 
     stage('Test') {
-      agent {
-        docker {
-          image 'timbru31/node-chrome:slim'
-        }
-
-      }
       steps {
-        sh 'chown -R $USER /usr/local/lib/node_modules'
-        sh 'npm install'
-        sh 'npm install -g @angular/cli@latest'
         sh 'npm install karma-coverage-istanbul-reporter --save-dev'
-        sh 'npm test'
+        sh 'ngtest'
       }
     }
 
-  }
-  tools {
-    nodejs 'nodejs'
   }
 }
