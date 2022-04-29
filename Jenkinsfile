@@ -27,4 +27,7 @@ pipeline {
     }
 
   }
+  tools {
+    nodejs 'nodejs'
+  }
 }
