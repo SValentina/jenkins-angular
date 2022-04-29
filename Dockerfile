@@ -1,4 +1,4 @@
-FROM timbru31/node-chrome
+FROM timbru31/node-chrome:slim
 
 RUN mkdir /usr/src/app
 
