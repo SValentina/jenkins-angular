@@ -22,6 +22,8 @@ pipeline {
       }
       steps {
         sh 'npm install'
+        sh 'npm remove -g angular-cli'
+        sh 'npm install -g @angular/cli@latest'
         sh 'npm install karma-coverage-istanbul-reporter --save-dev'
         sh 'npm test'
       }
