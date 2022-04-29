@@ -8,8 +8,12 @@ pipeline {
   stages {
     stage('Install') {
       steps {
+        sh '''mkdir ~/.npm-global
+npm config set prefix \'~/.npm-global\'
+export PATH=~/.npm-global/bin:$PATH
+source ~/.profile
+npm install -g jshint'''
         sh 'npm install'
-        sh 'chown usr:usr /usr/local/lib/node_modules'
         sh 'npm install -g @angular/cli@latest'
       }
     }
