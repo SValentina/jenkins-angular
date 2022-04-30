@@ -17,8 +17,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm uninstall -g karma'
-        sh 'npm install -g karma-cli'
+        sh 'npm install karma-coverage-istanbul-reporter --save-dev'
         sh 'ng test --browsers ChromeHeadless'
       }
     }
