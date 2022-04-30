@@ -6,8 +6,6 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm install'
-        sh 'npm install karma-coverage-istanbul-reporter --save-dev'
-        sh 'npm install @angular-devkit/build-webpack'
       }
     }
 
