@@ -17,7 +17,9 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'ng test'
+        sh 'npm uninstall -g karma'
+        sh 'npm install -g karma-cli'
+        sh 'ng test --browsers ChromeHeadless'
       }
     }
 
