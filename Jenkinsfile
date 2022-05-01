@@ -5,6 +5,7 @@ pipeline {
   stages {
     stage('Install') {
       steps {
+        sh 'npm cache clean --force'
         sh 'npm install'
         sh 'ng --version'
       }
