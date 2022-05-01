@@ -19,6 +19,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'ng test --browsers ChromeHeadless'
+        sh 'npm install karma-coverage-istanbul-reporter'
       }
     }
 
