@@ -6,6 +6,7 @@
     "types": [
       "jasmine"
     ]
+    "resolveJsonModule": true
   },
   "files": [
     "src/test.ts",
